@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tab2</title>
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<style>
+	ul{margin:0; padding:0; list-style:none; overflow:hidden;}
+	ul li{float:left; padding:5px 10px; background:#009966;cursor:pointer;}
+	ul li.active{ background:blue; border-top:2px solid #c00;padding:5px 10px;}
+	.tabContener div{border:2px solid red; height:500px;width:500px;}
+	
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.tabData').not(':first').hide();
+		$('ul li').click(function(){
+			var count = $(this).index();
+			$(this).addClass('active').siblings().removeClass('active');
+			$('.tabData:eq('+count+')').slideDown('slow').siblings().slideUp('slow');
+			});
+	});
+</script>
+</head>
+<body>
+<ul>
+	<li class="active">Tab1</li>
+	<li>Tab2</li>
+	<li>Tab3</li>
+	<li>Tab4</li>
+	<li>Tab5</li>
+	<li>Tab6</li>
+	<li>Tab7</li>
+	<li>Tab8</li>
+	<li>Tab9</li>
+	<li>Tab10</li>
+</ul>
+
+<div class="tabContener">
+	<div class="tabData" style="background:green;">Data1 class="tabData" style="background:green;">Data1</div>
+	<div class="tabData" style="background:blue;">Data2</div>
+	<div class="tabData" style="background:#00ff00;">Data3</div>
+	<div class="tabData" style="background:cacaca;">Data4</div>
+	<div class="tabData" style="background:red;">Data5</div>
+	<div class="tabData" style="background:#636363;">Data6</div>
+	<div class="tabData" style="background:#fff;">Data7</div>
+	<div class="tabData" style="background:#dadada;">Data8</div>
+	<div class="tabData" style="background:#9a9a9a;">Data9</div>
+	<div class="tabData" style="background:pink;">Data10</div>
+</div>
+
+</body>
+</html>

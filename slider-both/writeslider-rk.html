@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Slider</title>
+<style>
+
+.slider{width:202px;overflow:hidden;position:absolute}
+.slider ul{margin:0; padding:0; list-style:none;width:606px;-webkit-transition:0.3s;transition:0.3s;-moz-transition:0.3s;}
+.slider ul li{float:left;width:202px;}
+.slider a{position:absolute; top:10px; left:10px; z-index:999;color:#c00;font:bold 12px arial;text-decoration:none;background:#000}
+.slider a + a {margin-left: 100px;}
+</style>
+
+</head>
+<body>
+
+<div class="slider">
+    <ul id="slide">
+        <li><img src="item-1.png" alt="" /></li>
+        <li><img src="item-2.png" alt="" /></li>
+        <li><img src="item-3.png" alt="" /></li>
+    </ul>
+	<div class="button">
+		<a href="#" id="prev">Prev</a>
+		<a href="#" id="next" >Next</a>
+	</div>
+</div>
+
+
+<script>
+//globel variable
+	var slideCotainer = document.querySelector("#slide"),
+		slides = slideCotainer.querySelectorAll("li"),
+		slideCount = slides.length,
+		slideWidth = slides[0].clientWidth;
+		slideCotainer.style.marginLeft.width = slideCount * slideWidth;
+
+function slideNext(){
+		var currentIndex = getCurrentIndex(),
+			targetIndex;
+		if(-(currentIndex - 1) >= slideCount){
+			targetIndex = 0 + "px";
+		}else{
+			targetIndex = slideWidth * (currentIndex - 1) + "px"; 
+		}
+		slideCotainer.style.marginLeft = targetIndex;
+	}
+
+function slidePrev() {
+    var currentIndex = getCurrentIndex(),
+        targetIndex;
+
+    if (currentIndex == 0) {
+        targetIndex = -slideWidth * (slideCount - 1) + "px";
+    } else {
+        targetIndex = slideWidth * (currentIndex + 1) + "px";
+    }
+
+    slideCotainer.style.marginLeft = targetIndex;
+}
+	
+//global function	
+	function getCurrentIndex(){
+		var currentIndex;
+		if(slideCotainer.style.marginLeft){
+			currentIndex = parseInt(slideCotainer.style.marginLeft) / slideWidth;
+		}else{
+			currentIndex = 0;
+		}
+		return currentIndex;
+	}
+	
+//event binding	
+document.querySelector("#next").onclick = slideNext;
+document.querySelector("#prev").onclick = slidePrev;
+	</script>
+
+</body>
+</html>

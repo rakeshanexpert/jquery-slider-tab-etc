@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+
+
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="outer-field">
+			<h1>Calculator</h1>
+			<form>
+				<input type="text" readonly value="0" id="display" />
+				<div class="btn">
+					<span onclick="setNum(9);">9</span>
+					<span onclick="setNum(8);">8</span>
+					<span onclick="setNum(7);">7</span>
+					<span class="effect" onclick="setNum('+');">+</span>
+					<span onclick="setNum(4);">4</span>
+					<span onclick="setNum(5);">5</span>
+					<span onclick="setNum(6);">6</span>
+					<span class="effect" onclick="setNum('-');">-</span>
+					<span onclick="setNum(3);">3</span>
+					<span onclick="setNum(2);">2</span>
+					<span onclick="setNum(1);">1</span>
+					<span class="effect multi" onclick="setNum('&#215;');">&#215;</span>
+					<span onclick="setNum(0);">0</span>
+					<span onclick="setNum('.');">.</span>
+					<span onclick="reset();">C</span>
+					<span class="effect" onclick="setNum('&#247;');">&#247;</span>
+					<span class="effect">M+</span>
+					<span class="effect">M-</span>
+					<span class="effect" onclick="root('&#10003;');">&#10003;</span>
+					<span class="effect" onclick="equal();">=</span>
+				</div>	
+				<div class="clr"></div>
+			</form>
+		</div>
+		
+	</div>
+	
+<script type="text/javascript">
+function setNum(num){
+	var disp = document.getElementById("display");
+	if(disp.value == 0){
+		disp.value = num
+		//alert(disp.value);
+	}else{
+		disp.value = disp.value + num
+		//alert(disp.value);
+	}
+}
+function reset(){
+		document.getElementById("display").value = 0;
+		
+	}
+	
+function root(){
+   var a = document.getElementById("display").value;
+    b=a*a;
+	document.getElementById("display").value = b;
+}
+
+
+</script>
+	
+</body>
+</html>

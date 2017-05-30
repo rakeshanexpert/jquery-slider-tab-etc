@@ -1,0 +1,28 @@
+*{box-sizing: border-box;}
+body{font: 12px Arial;}
+
+.container{max-width:960px;  min-width: 600px; margin: 10px auto; width:100%;}
+
+table{border-collapse: collapse; width:100%;}
+td, th{border:1px solid #DDD; padding: 10px;}
+th{background: #F2F2F2;}
+
+form{box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); border-radius: 10px; margin-bottom: 20px; padding: 20px;}
+form td{border:0}
+select, input[type="text"]{width: 100%; padding: 5px;}
+
+form td:nth-child(odd){text-align:right; }
+form td:nth-child(even){width:35%;}
+
+.user-data td, .salary-table td{width: 25%;}
+.user-data td:nth-child(odd){color: #555;}
+
+.salary-table{margin: 20px 0;}
+.salary-table tfoot{font-weight: 700}
+.salary-table .net-salary{font:700 16px Georgia; text-align: right;}
+
+[id^=n_]{text-align:right;}
+
+@media print{
+	form{display: none}
+}

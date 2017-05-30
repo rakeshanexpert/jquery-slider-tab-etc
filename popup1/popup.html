@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>popup</title>
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<style>
+a{text-decoration:none;font:18px georgia;color:#e607b4;padding-left:10px;}
+.contactDetail{position:absolute;top:25%; left:25%; width:400px; height:220px;background:#fff;
+border:2px dotted #241c24;border-radius:5px;display:none;z-index:2;}
+input[type="text"],input[type="password"]{width:60%;margin:12px;padding:6px;border:1px solid #a80c22;outline:none;}
+.sub{width:60px;border:1px solid #a80c22;color:#fff;}
+.sub1{border:1px solid #a80c22;color:#fff;}
+.blackovery{position:fixed;top:0px;bottom:0px;left:0px;right:0px;display:none;z-index:1;background:#000;opacity:0.2}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.loginButton').click(function(){
+			$('.contactDetail').show(1000);
+			$('.blackovery').fadeIn(1200);
+				$('.sub1').click(function(){
+					$('.contactDetail').hide(800);
+					$('.blackovery').fadeOut(200);
+				});
+		});
+	});
+</script>
+</head>
+<body>
+	<a href="#" class="loginButton">Login</a>
+	<div class="contactDetail">
+		<form>
+			<input type="text" name="name" placeholder="Name:" />
+			<input type="text" name="email" placeholder="Email:" />
+			<input type="text" name="phone" placeholder="Phone:" />
+			<input type="password" placeholder="Password:" />
+			<input type="submit" value="submit" class="sub" />
+			<button class="sub1">Close</button>
+		</form>
+	</div>
+	<div class="blackovery"></div>
+</body>
+</html>

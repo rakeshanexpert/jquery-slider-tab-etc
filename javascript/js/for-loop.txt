@@ -1,0 +1,92 @@
+var d = new Date();
+d.getDay()
+d.getMinutes()
+d.getYear()
+
+//
+
+for(initiator; condition; increment/decrement){
+    console.log("rakesh jee");
+}
+
+for(var i=0; i < 10; i++){
+    console.log("rakesh jee" + i);
+}
+
+//
+
+for(var i=10; i >= 0; i--){
+    console.log("rakesh jee : " + i);
+}
+
+//
+
+function max(n1,n2){
+    if(typeof n1=="number" && typeof n2=="number"){
+        if(n1>n2){
+            console.log(n1)
+        }else{
+            console.log(n2)
+        }
+       
+    }
+
+}
+max(112,1115)
+
+//
+
+function max(n1,n2){
+    if(!isNaN (n1) && !isNaN (n2)){
+        if(n1>n2){
+         console.log(n1)
+        }else{
+            console.log(n2)
+        }
+        
+        }
+    
+    }
+  max(2,4)
+  
+  //
+  
+  function max(n1, n2, n3){
+    if(!isNaN (n1) && !isNaN (n2) || !isNaN (n3)){
+        var biggest;
+        if(n1 >= n2){
+          biggest = n1;  
+        }else{
+            biggest = n2;
+        }
+        if(n3 >= biggest){
+            biggest = n3;
+        }
+        console.log(biggest);
+    }
+}
+max(331,22,43)
+  
+  //
+  
+  function max(n1, n2, n3) {
+   //if(!isNaN(n1,n2,n3))
+	if(!isNaN(n1 + n2 + n3)){
+		var biggest;
+		if(n1 >= n2){
+			biggest = n1;
+		} else {
+		   biggest = n2;
+		}
+		
+		if(n3 >= biggest){
+			biggest = n3;
+		}
+		
+		console.log(biggest);
+	}
+}
+
+max(1,2,1);
+
+  //

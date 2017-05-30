@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<link rel="stylesheet" href="style.css" />
+
+</head>
+
+
+<body>
+	<div class="container">
+		<form id="inputForm">
+			<table>
+				<tr>
+					<td>Emp ID</td>
+					<td>
+						<select name="empId">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+					</td>
+					<td>Pay days</td>
+					<td>
+						<select name="paydays">
+							<option value="31">31</option>
+							<option value="30">30</option>
+							<option value="29">29</option>
+							<option value="28">28</option>
+							<option value="27">27</option>
+							<option value="26">26</option>
+							<option value="25">25</option>
+							<option value="24">24</option>
+							<option value="23">23</option>
+							<option value="22">22</option>
+							<option value="21">21</option>
+							<option value="20">20</option>
+							<option value="19">19</option>
+							<option value="18">18</option>
+							<option value="17">17</option>
+							<option value="16">16</option>
+							<option value="15">15</option>
+							<option value="14">14</option>
+							<option value="13">13</option>
+							<option value="12">12</option>
+							<option value="11">11</option>
+							<option value="10">10</option>
+							<option value="9">9</option>
+							<option value="8">8</option>
+							<option value="7">7</option>
+							<option value="6">6</option>
+							<option value="5">5</option>
+							<option value="4">4</option>
+							<option value="3">3</option>
+							<option value="2">2</option>
+							<option value="1">1</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Month</td>
+					<td>
+						<select name="month">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+					</td>
+					<td>Year</td>
+					<td>
+						<select name="year">
+							<option value="2014">2014</option>
+							<option value="2013">2013</option>
+							<option value="2012">2012</option>
+							<option value="2011">2011</option>
+							<option value="2010">2010</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>
+						<input type="submit" value="Calculate Salary" />
+						<input type="button" value="Print" name="print" />
+					</td>
+				</tr>
+			</table>
+		</form>
+
+		<table class="user-data">
+			<tr>
+				<td>Name</td>
+				<td id="name"></td>
+				<td>Employee ID</td>
+				<td id="empId"></td>
+			</tr>
+			<tr>
+				<td>Designation</td>
+				<td id="designation"></td>
+				<td>Payroll Id</td>
+				<td id="payrollId"></td>
+			</tr>
+			<tr>
+				<td>Department</td>
+				<td id="department"></td>
+				<td>PAN No.</td>
+				<td id="pan"></td>
+			</tr>
+			<tr>
+				<td>Location</td>
+				<td id="location"></td>
+				<td>PF No.</td>
+				<td id="pf"></td>
+			</tr>
+			<tr>
+				<td>D.O.J</td>
+				<td id="doj"></td>
+				<td>EPS A/C NO.</td>
+				<td id="eps"></td>
+			</tr>
+			<tr>
+				<td>Pay Days</td>
+				<td id="paydays"></td>
+				<td>Bank A/C No.</td>
+				<td id="bankAcc"></td>
+			</tr>
+		</table>
+
+		<table class="salary-table">
+			<thead>
+				<tr>
+					<th colspan="2">Earnings</th>
+					<th colspan="2">Deductions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Basic</td>
+					<td id="n_basic"></td>
+					<td>Provident Fund</td>
+					<td id="n_pf"></td>
+				</tr>
+				<tr>
+					<td>DA</td>
+					<td id="n_da"></td>
+					<td>ESI</td>
+					<td id="n_esi"></td>
+				</tr>
+				<tr>
+					<td>HRA</td>
+					<td id="n_hra"></td>
+					<td>Loan</td>
+					<td id="n_loan"></td>
+				</tr>
+				<tr>
+					<td>Conveyance</td>
+					<td id="n_conveyance"></td>
+					<td>Profession Tax</td>
+					<td  id="n_tax"></td>
+				</tr>
+				<tr>
+					<td>Medical Allowance</td>
+					<td id="n_medical"></td>
+					<td>TSD/ID</td>
+					<td id="n_tsd"></td>
+				</tr>
+				<tr>
+					<td>Special Allowance</td>
+					<td id="n_special"></td>
+					<td></td>
+					<td></td>
+				</tr>				
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>Total Earning</td>
+					<td id="n_totalEarnings"></td>
+					<td>Total Deduction</td>
+					<td id="n_totalDeductions"></td>
+				</tr>
+				<tr>
+					<td colspan="3" class="net-salary">Net Salary</td>
+					<td id="n_net"></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<script type="text/javascript" src="js.js"></script>
+</body>
+</html>

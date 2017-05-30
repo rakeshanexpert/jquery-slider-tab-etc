@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>filldata</title>
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<style>
+*{margin:0;padding:0;border:0;overflow:hidden;}
+ul li{position:relative;list-style:none;float:left;background:#e60f60;cursor:pointer;margin-right:5px;border-radius:5px 3px;color:#fff;font:bold 14px georgia;padding:12px 15px;}
+ul li:hover{background:#393738;color:#fff;margin-top:5px;}
+.overall{margin:100px 300px;width:800px;height:400px;}
+.select{position:absolute;top:140px;left:300px;height:300px;width:618px;background:#393738;border-radius:3px 3px 10px 10px;color:#fff;}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('ul li').click(function(){
+			var count=$(this).text();
+			$('.select').text(count);
+		});
+	});
+</script>
+
+<body>
+<div class="overall">
+	<div class="select">Fill Value</div>
+	<ul>
+		<li>RAKESH</li>
+		<li>RAJESH</li>
+		<li>ASHISH</li>
+		<li>RAVI</li>
+		<li>WILLIM</li>
+		<li>MIKE</li>
+		<li>MARK</li>
+	</ul>
+</div>	
+</body>
+</html>

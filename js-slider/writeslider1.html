@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Slider</title>
+<style>
+.clearfix{}
+.clearfix:after, .clearfix:before{content: ""; display:table}
+.clearfix:after{clear:both}
+
+.slider{position:relative; overflow:hidden; width:700px;}
+.slider ul{margin:0; padding:0; height:500px; width:3000px; -webkit-transition:0.3s;}
+.slider ul li{float:left; list-style:none; width:700px}
+
+.button a{position:absolute; top:38%; left:10px;color:#fff;font:24px arial;text-decoration:none;background:#c00;padding:10px 20px;border-radius:4px;}
+.button a + a {margin-left:590px;}
+</style>
+
+</head>
+<body>
+
+<div class="slider">
+    <ul id="slide">
+        <li><img src="image1.jpg" alt="" /></li>
+        <li><img src="image2.jpg" alt="" /></li>
+        <li><img src="image3.jpg" alt="" /></li>
+        <li><img src="image4.jpg" alt="" /></li>
+    </ul>
+	<div class="button">
+		<a href="#" id="prev">Prev</a>
+		<a href="#" id="next" >Next</a>
+	</div>
+</div>
+
+
+<script>
+//variable
+	var slideCotainer = document.querySelector("#slide"),
+		slides = slideCotainer.querySelectorAll("li"),
+		slideCount = slides.length,
+		slideWidth = slides[0].clientWidth;
+		slideCotainer.style.marginLeft.width = slideCount * slideWidth;
+
+	function slideNext(){
+		var currentIndex = getCurrentIndex(),
+		targetIndex;
+		if(-(currentIndex - 1) >= slideCount){
+			targetIndex = 0 + "px";
+		}else{
+			targetIndex = slideWidth * (currentIndex - 1) + "px";
+		}
+		slideCotainer.style.marginLeft = targetIndex;
+	}
+
+	function slidePrev() {
+    var currentIndex = getCurrentIndex(),
+        targetIndex;
+
+    if (currentIndex == 0) {
+        targetIndex = -slideWidth * (slideCount - 1) + "px";
+    } else {
+        targetIndex = slideWidth * (currentIndex + 1) + "px";
+    }
+
+    slideCotainer.style.marginLeft = targetIndex;
+}
+	
+//global function	
+	function getCurrentIndex(){
+		var currentIndex;
+		if(slideCotainer.style.marginLeft){
+			currentIndex = parseInt(slideCotainer.style.marginLeft) / slideWidth;
+		}else{
+			currentIndex = 0;
+		}
+		return currentIndex;
+	}
+	
+//event binding	
+document.querySelector("#next").onclick = slideNext;
+document.querySelector("#prev").onclick = slidePrev;
+	
+		
+	
+
+</script>
+
+</body>
+</html>

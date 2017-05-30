@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Validation</title>
+<style>
+ul{margin:0; padding:0; list-style:none;}
+ul li{float:left;}
+.slider a{position:absolute; top:10px; left:10px; z-index:999}
+.slider a + a {margin-left: 100px;}
+</style>
+<script src="jquery-1.10.2.min.js"></script>
+<script>
+$(document).ready(function(){
+    var imgLenght = $('.slider ul li').length,
+        imgWidth = $('.slider ul li:first').width(),
+        totalWidth = imgLenght * imgWidth, 
+        max = imgLenght,
+        counter = 0;
+        $('.slider ul').css({width: totalWidth, position: 'relative'});
+        $('.slider').css({width: imgWidth, overflow : 'hidden'})
+    
+    $('.slider a:first').click(function(){
+        counter ++
+        if(counter < max){
+            $('.slider ul').animate({
+                marginLeft : - (imgWidth * counter)
+            });
+        }else{
+            counter = 0
+            $('.slider ul').animate({
+                marginLeft : 0
+            });
+        }
+        return false;
+    });
+    
+    $('.slider a:eq(1)').click(function(){
+        counter --
+        if(counter > -1){
+        $('.slider ul').animate({
+            marginLeft : - (imgWidth * counter)
+        });
+        }else{
+            counter = 0
+            $('.slider ul').animate({
+                marginLeft : 0
+            });
+        }
+        return false;
+    });
+});
+</script>
+</head>
+<body>
+
+<div class="slider">
+    <a href="#">Next</a>
+    <a href="#">Prev</a>
+    <ul>
+        <li><img src="bg.jpg" alt="" /></li>
+        <li><img src="2.jpg" alt="" /></li>
+        <li><img src="3.jpg" alt="" /></li>
+        <li><img src="background.jpg" alt="" /></li>
+    </ul>
+</div>
+</body>
+</html>
